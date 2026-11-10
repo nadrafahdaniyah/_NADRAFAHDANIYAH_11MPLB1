@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Nadra Fahdaniyah</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        // Konfigurasi Kustom Tailwind dengan Tema Nuansa Hijau Army / Alam
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        army: {
+                            50: '#f4f6f3',
+                            100: '#e3e8e1',
+                            200: '#ca969c',
+                            300: '#a3b39c',
+                            400: '#7a8f71',
+                            500: '#586e4e',
+                            600: '#45573d',
+                            700: '#384632',
+                            800: '#2d3729',
+                            900: '#1e241b',
+                            950: '#111510',
+                        },
+                        sage: '#8a9a86',
+                        earth: '#d4a373',
+                        sand: '#faedcd',
+                        cream: '#fefae0',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* CSS Kustom untuk Efek Animasi & Background */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #1e241b;
+            color: #f4f6f3;
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(rgba(122, 143, 113, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .glass-card {
+            background: rgba(45, 55, 41, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(122, 143, 113, 0.2);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(163, 179, 156, 0.5);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #a3b39c 0%, #faedcd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Leaf float animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e241b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #45573d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #586e4e;
+        }
+    </style>
+</head>
+<body class="bg-army-900 text-army-50 bg-pattern antialiased selection:bg-army-500 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-6 py-3 border border-army-600/30">
+            <!-- Logo Brand -->
+            <a href="#hero" class="flex items-center gap-2 group">
+                <div class="w-9 h-9 rounded-full bg-army-600 text-cream flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-army-500 transition-colors">
+                    N
+                </div>
+                <span class="font-bold text-lg tracking-wide text-cream group-hover:text-army-300 transition-colors">Nadra<span class="text-army-400">.</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#hero" class="hover:text-army-300 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-army-400 hover:after:w-full after:transition-all">Beranda</a>
+                <a href="#about" class="hover:text-army-300 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-army-400 hover:after:w-full after:transition-all">Tentang Saya</a>
+                <a href="#skills" class="hover:text-army-300 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-army-400 hover:after:w-full after:transition-all">Keahlian</a>
+                <a href="#projects" class="hover:text-army-300 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-army-400 hover:after:w-full after:transition-all">Proyek</a>
+                <a href="#contact" class="hover:text-army-300 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-army-400 hover:after:w-full after:transition-all">Kontak</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-army-600 hover:bg-army-500 text-cream px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-army-600/30 flex items-center gap-2">
+                    <i class="fa-regular me-1 fa-paper-plane text-xs"></i> Hubungi Saya
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-army-100 focus:outline-none p-2 rounded-lg hover:bg-army-800/50" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2 glass-card rounded-2xl p-6 border border-army-600/30 flex-col gap-4 text-center">
+            <a href="#hero" class="mobile-link py-2 text-army-100 hover:text-cream font-medium border-b border-army-800/50">Beranda</a>
+            <a href="#about" class="mobile-link py-2 text-army-100 hover:text-cream font-medium border-b border-army-800/50">Tentang Saya</a>
+            <a href="#skills" class="mobile-link py-2 text-army-100 hover:text-cream font-medium border-b border-army-800/50">Keahlian</a>
+            <a href="#projects" class="mobile-link py-2 text-army-100 hover:text-cream font-medium border-b border-army-800/50">Proyek</a>
+            <a href="#contact" class="mobile-link py-2 text-army-100 hover:text-cream font-medium">Kontak</a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative pt-24 pb-12 px-6 overflow-hidden">
+        <!-- Floating Ambient Elements -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-army-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-10 w-80 h-80 bg-army-400/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Hero Text Content -->
+            <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-army-500/30 text-army-300 text-xs font-semibold uppercase tracking-wider animate-float">
+                    <i class="fa-solid fa-leaf text-army-400"></i> Portofolio Manajemen Perkantoran
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold text-cream leading-tight tracking-tight">
+                    Halo Semua 👋 <br>
+                    <span class="text-gradient">Saya Nadra Fahdaniyah</span>
+                </h1>
+                
+                <p class="text-army-200 text-base md:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    "Halo semuanya, selamat datang di website portofolio saya! Website ini dibuat untuk memperlihatkan kepada kalian berbagai keahlian, proyek, dan rekam jejak yang telah saya bangun."
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#projects" class="bg-army-500 hover:bg-army-400 text-cream font-semibold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-army-500/30 transition-all flex items-center gap-2">
+                        <span>Lihat Proyek Saya</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#about" class="glass-card hover:bg-army-800/80 text-army-200 hover:text-cream font-medium px-7 py-3.5 rounded-xl transition-all border border-army-600/40">
+                        Tentang Saya
+                    </a>
+                </div>
+
+                <!-- Quick Stats Badges -->
+                <div class="pt-8 border-t border-army-800/60 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                    <div>
+                        <p class="text-2xl font-bold text-cream">SMK</p>
+                        <p class="text-xs text-army-300">Cyber Media</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-cream">MPLB</p>
+                        <p class="text-xs text-army-300">Spesialisasi</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-cream">10 Jari</p>
+                        <p class="text-xs text-army-300">Keahlian Ketik</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Container -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
+                    <!-- Leaf Decorative SVG Background -->
+                    <div class="absolute -top-6 -right-6 w-20 h-20 text-army-500/30 animate-pulse">
+                        <i class="fa-solid fa-seedling text-6xl"></i>
+                    </div>
+                    
+                    <!-- Decorative Ring -->
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-army-600 to-army-400 rotate-6 opacity-30 blur-sm"></div>
+                    
+                    <!-- Photo Card Container -->
+                    <div class="relative w-full h-full rounded-3xl overflow-hidden glass-card p-3 border border-army-500/40 shadow-2xl">
+                        <div class="w-full h-full rounded-2xl overflow-hidden bg-army-800 relative group flex items-center justify-center">
+                            <!-- Foto Nadra Fahdaniyah -->
+                            <img src="IMG-20260824-WA0009_c7f459.jpg" 
+                                 alt="Nadra Fahdaniyah" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800';">
+                            
+                            <!-- Overlay Badge -->
+                            <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl glass-card border border-army-500/30 text-center">
+                                <p class="text-xs font-semibold text-cream">Nadra Fahdaniyah</p>
+                                <p class="text-[10px] text-army-300">Siswa MPLB SMK Cyber Media</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT SECTION -->
+    <section id="about" class="py-20 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-army-400 font-semibold text-sm tracking-widest uppercase flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-tree"></i> Mengenal Lebih Dekat
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-cream mt-2">Tentang Saya</h2>
+                <div class="w-16 h-1 bg-army-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Main Education Card -->
+                <div class="lg:col-span-7 glass-card glass-card-hover rounded-3xl p-8 flex flex-col justify-between border border-army-600/30">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-army-600/40 border border-army-500/30 flex items-center justify-center text-cream text-2xl">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        
+                        <div>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-army-700/60 text-army-300 border border-army-600/40">Pendidikan Aktif</span>
+                            <h3 class="text-2xl font-bold text-cream mt-3">Siswa SMK Cyber Media</h3>
+                            <p class="text-army-400 font-medium text-sm mt-1">Jurusan: Manajemen Perkantoran & Layanan Bisnis (MPLB)</p>
+                        </div>
+
+                        <p class="text-army-200 leading-relaxed font-light text-sm md:text-base">
+                            Saat ini saya sedang menempuh pendidikan di <strong class="text-cream">SMK Cyber Media</strong> dengan konsentrasi keahlian <strong class="text-cream">Manajemen Perkantoran dan Layanan Bisnis (MPLB)</strong>. Melalui program studi ini, saya dibekali dengan kemampuan tata kelola administrasi modern, pengelolaan kearsipan digital, komunikasi bisnis profesional, dan efisiensi operasional kantor.
+                        </p>
+
+                        <p class="text-army-200 leading-relaxed font-light text-sm md:text-base">
+                            Saya adalah individu yang disiplin, berorientasi pada ketelitian, serta antusias dalam menerapkan teknologi untuk mempermudah pekerjaan administratif di era digital modern.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-army-800/60 flex flex-wrap gap-4 text-xs font-medium text-army-300">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-army-400"></i> Administrasi Digital</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-army-400"></i> Tata Kelola Kantor</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-army-400"></i> Otomatisasi Perkantoran</span>
+                    </div>
+                </div>
+
+                <!-- Complementary Cards Grid -->
+                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                    <!-- Card 1: Fokus Jurusan -->
+                    <div class="glass-card glass-card-hover rounded-3xl p-6 border border-army-600/30 flex-1">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-army-700/50 flex items-center justify-center text-army-300 text-xl shrink-0">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-cream">Fokus MPLB</h4>
+                                <p class="text-xs text-army-200 mt-2 leading-relaxed">
+                                    Mempelajari manajemen dokumen, korespondensi bisnis, kearsipan elektronik, serta standar pelayanan prima (*service excellence*) kepada klien.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Visi Kerja -->
+                    <div class="glass-card glass-card-hover rounded-3xl p-6 border border-army-600/30 flex-1">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-army-700/50 flex items-center justify-center text-army-300 text-xl shrink-0">
+                                <i class="fa-solid fa-compass"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-cream">Prinsip Kerja</h4>
+                                <p class="text-xs text-army-200 mt-2 leading-relaxed">
+                                    Selalu mengedepankan ketepatan waktu, kerapihan data, dan kerapian penyusunan laporan kerja untuk mendukung efisiensi tim.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Keunggulan Diri -->
+                    <div class="glass-card glass-card-hover rounded-3xl p-6 border border-army-600/30 flex-1 bg-gradient-to-br from-army-800/80 to-army-900/80">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-army-400 font-semibold">Komitmen</p>
+                                <h4 class="text-base font-bold text-cream mt-1">Siap Berkontribusi & Belajar</h4>
+                            </div>
+                            <i class="fa-solid fa-feather-pointed text-2xl text-army-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SKILLS SECTION -->
+    <section id="skills" class="py-20 px-6 relative bg-army-950/40">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-army-400 font-semibold text-sm tracking-widest uppercase flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-mountain text-xs"></i> Kemampuan Mutakhir
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-cream mt-2">Keahlian Saya</h2>
+                <p class="text-army-300 text-sm mt-3">Kompetensi teknis dan kemampuan pendukung yang saya kuasai dalam bidang administrasi dan komunikasi.</p>
+                <div class="w-16 h-1 bg-army-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-c
